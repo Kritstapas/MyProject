@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSU Beverage Shop</title>
+    <div align="center">
+    <img src="C:\Users\Asus\Pictures\Saved Pictures\2047421.jpg.webp" width="250">
+    </div>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: hsl(241, 80%, 38%);
+        }
+     
+        button {
+            background-color: hsl(188, 61%, 41%);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: hsl(205, 61%, 33%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: #ffffff;">PSU Beverage Shop</h1>
+        <div id="productList">
+			<div align="center">
+            <div class="product">
+				<img src="C:\Users\Asus\Downloads\mineralwater.jpg.png" alt="Mineral Water"width="150" height="250" />
+                <h3>Mineral Water</h3>
+				<h3>$10</h3>
+				<button onclick="addToCart('Mineral Water', 10)">Add to Cart</button>
+			</div>
+			<div class="product">
+				<img src="C:\Users\Asus\Downloads\sodawater.jpg.png" alt="Soda Water"width="200" height="250" />
+                    <h3>Soda Water</h3>
+				<h3>$12</h3>
+				<button onclick="addToCart('Soda Water', 15)">Add to Cart</button>
+			</div>
+			<div class="product">
+				<img src="C:\Users\Asus\Downloads\orangejuice.jpg.png" alt="Orange Juice"width="200" height="250" />
+                    <h3>Orange Juice</h3>
+				<h3>$15</h3>
+				<button onclick="addToCart('Orange Juice', 15)">Add to Cart</button>
+			</div>
+			<div class="product">
+				<img src="C:\Users\Asus\Downloads\icedchocolate.jpg.png" alt="Iced Chocolate"width="200" height="250" />
+                <h3>Iced Chocolate</h3>
+				<h3>$15</h3>
+				<button onclick="addToCart('Iced Chocolate', 15)">Add to Cart</button>
+			</div>
+        </div>
+        
+       
+    <h1 style="color: #ffffff;">Shopping Cart</h1>
+<div class="cart">
+
+    <ul id="cartList"></ul>
+    
+</div>
+
+<!-- ปุ่มอยู่ข้างนอก <div class="cart"> เพื่อให้ทำงานได้ -->
+<div style="text-align: center; margin-top: 10px;">
+    <button class="proceed-btn" onclick="checkout()">Proceed to Checkout</button>
+</div>
+
+    <script src="script.js"></script>
+
+<div id="checkoutForm" style="display: none; background: white; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin-top: 20px;">
+   <h1 style="color: hwb(0 0% 100%);">Checkout Summary</h1>
+    <div class="cart">
+        
+    <ul id="checkoutCartList"></ul>
+        
+    <p><strong>Total: $<span id="checkoutTotal">0</span></strong></p>
+
+    <h3>Customer Information</h3>
+    <form id="customerForm">
+        <label for="customerName">Enter Your Name:</label>
+        <input type="text" id="customerName" required style="width: 100%; padding: 10px; font-size: 18px;"><br><br>
+
+        <label for="address">Address:</label>
+        <input id="address" required style="width: 100%; height: 100px; padding: 10px; font-size: 18px;"><br><br>
+
+        <label for="contact">Contact:</label>
+        <input type="text" id="contact" required style="width: 100%; padding: 10px; font-size: 18px;"><br><br>
+
+        <button type="button" onclick="confirmCheckout()" style="padding: 10px 20px; font-size: 18px;">Confirm Order</button>
+    </form>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
